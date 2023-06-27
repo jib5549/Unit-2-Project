@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
     username: {type: String, required: true, unique: true},
     password: {type: String, required: true},
     email: {type: String, required: true, unique: true},
+    loggedIn: Boolean,
     cart: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Cart'}] // don't need require because when they start make a user they are not going to have any items in their cart
 })
 
