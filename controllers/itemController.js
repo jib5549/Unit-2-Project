@@ -10,8 +10,6 @@ exports.showItem = async (req, res) => {
     }
 }
 
-
-
 exports.createItem = async (req, res) => {
     try {
         const item = new Item(req.body)
