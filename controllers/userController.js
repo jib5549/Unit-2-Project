@@ -19,10 +19,10 @@ exports.auth = async (req, res, next) => {
     }
 }
 
-exports.getUser = async (req, res) => {
+exports.indexUser = async (req, res) => {
     try {
-        const users = await User.find() //  Without await, the code would continue executing immediately after calling User.find(), and the users variable would not be assigned the actual result of the query. Using await ensures that the users variable contains the resolved value of the promise returned by User.find(), which in this case is the retrieved user data.
-        res.json(users) // This line sends the retrieved users data as a JSON response. It uses the json() method of the res (response) object to convert the users data into JSON format and send it back to the client.
+        const foundUsers = await User.find({}) //  Without await, the code would continue executing immediately after calling User.find(), and the users variable would not be assigned the actual result of the query. Using await ensures that the users variable contains the resolved value of the promise returned by User.find(), which in this case is the retrieved user data.
+        res.json({users: foundUsers}) // This line sends the retrieved users data as a JSON response. It uses the json() method of the res (response) object to convert the users data into JSON format and send it back to the client.
     } catch (error) {
         res.status(400).json({ message: error.message })
     }

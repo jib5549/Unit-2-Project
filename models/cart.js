@@ -1,9 +1,9 @@
 const { model, Schema } = require('mongoose')
 
 const cartSchema = new Schema ({
-    price: { type: Number, required: true },
-    totalItems: { type: Number, required: true },
-    totalPrice: { type: Number, required: true },
+    totalItems: { type: Number, default: 0, required: true },
+    totalPrice: {type: Number, default: 0, required: true},
+    items: [{ type: Schema.Types.Object, ref: 'Item' }],
     user: { type: Schema.Types.ObjectId, required: true, ref: 'User' }
 })
 
