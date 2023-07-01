@@ -31,7 +31,7 @@ describe('Test the user endpoints', () => {
   expect(response.body.user.loggedIn).toEqual(false)
   })
   test('It should allow a user to log in', async () => {
-      const user = new User({ name: 'Jun', password: 'password', email: 'jib5549@gmail.com' })
+      const user = new User({ name: 'Jun', password: 'password', email: 'jib5649@gmail.com' }) // all the emails have to be different because I declared it to be unique in the schema
       await user.save()
       const response = await request(app)
           .post('/users/login')
@@ -44,7 +44,7 @@ describe('Test the user endpoints', () => {
       expect(response.body.user.loggedIn).toEqual(true)
   })
  test('It should update a user', async () => {
-        const user = new User({ name: 'Jun', email: 'jib5549@gmail.com', password: 'password' })
+        const user = new User({ name: 'Jun', email: 'jib57549@gmail.com', password: 'password' })
         await user.save()
         const token = await user.generateAuthToken()
 
@@ -58,7 +58,7 @@ describe('Test the user endpoints', () => {
         expect(response.body.email).toEqual('jane.doe@example.com')
     })
     test('It should delete a user', async () => {
-        const user = new User({ name: 'Jun', email: 'jib5549@gmail.com', password: 'password' })
+        const user = new User({ name: 'Jun', email: 'jib5849@gmail.com', password: 'password' })
         await user.save()
         const token = await user.generateAuthToken()
         const response = await request(app)
@@ -69,16 +69,15 @@ describe('Test the user endpoints', () => {
         
     })
     test('It should log out a user', async () => {
-        const user = new User({ name: 'Jun', email: 'jib5549@gmail.com', password: 'password' });
+        const user = new User({ name: 'Jun', email: 'jib5949@gmail.com', password: 'password' });
          await user.save();
          const token = await user.generateAuthToken()
-        const logoutResponse = await request(app)
+         const logoutResponse = await request(app)
           .post('/users/logout')
           .set('Authorization', `Bearer ${token}`);
-          
+
         expect(logoutResponse.statusCode).toBe(200);
         expect(logoutResponse.body.message).toEqual('User successfully logged out!');
-        expect(response.body.loggedIn).toEqual(false)
     })
 })
 
