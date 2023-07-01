@@ -2,6 +2,7 @@ require('dotenv').config()
 const User = require('../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const Cart = require('../models/cart')
 
 
 exports.auth = async (req, res, next) => {
@@ -21,7 +22,14 @@ exports.auth = async (req, res, next) => {
 
 exports.indexUser = async (req, res) => {
     try {
-        const foundUsers = await User.find({}) //  Without await, the code would continue executing immediately after calling User.find(), and the users variable would not be assigned the actual result of the query. Using await ensures that the users variable contains the resolved value of the promise returned by User.find(), which in this case is the retrieved user data.
+        const foundUsers = await User.find({})//  Without await, the code would continue executing immediately after calling User.find(), and the users variable would not be assigned the actual result of the query. Using await ensures that the users variable contains the resolved value of the promise returned by User.find(), which in this case is the retrieved user data.
+        .populate("cart")
+        .populate({ // populate allows you to extract the data individually and present to the user in a detailed format
+            path: "cart",
+            populate: {
+                path: "items",
+            },
+        });
         res.json({users: foundUsers}) // This line sends the retrieved users data as a JSON response. It uses the json() method of the res (response) object to convert the users data into JSON format and send it back to the client.
     } catch (error) {
         res.status(400).json({ message: error.message })
@@ -31,9 +39,9 @@ exports.indexUser = async (req, res) => {
 exports.createUser = async (req, res) => {
     try {
         const user = new User(req.body)
-        await user.save()
         const token = await user.generateAuthToken()
         user.loggedIn = false
+        await user.save()
         res.json({ user, token })
     } catch (error) { 
         res.status(400).json({ message: error.message })
@@ -59,7 +67,7 @@ exports.updateUser = async (req, res) => {
         const updates = Object.keys(req.body)
         updates.forEach(update => req.user[update] = req.body[update])
         await req.user.save()
-        res.json(user)
+        res.json(req.user) // in line 68 req.body[update] is the user changing the format and req.user is the new updated version so I have to call "req.user" instead of "user"
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
