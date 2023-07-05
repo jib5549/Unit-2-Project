@@ -5,7 +5,7 @@ const Cart = require('../models/cart')
 exports.itemIndex = async (req, res) => {
     try {
         const foundItems = await Item.find({})
-        res.json({items: foundItems})
+        res.json({ items: foundItems })
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
@@ -26,7 +26,7 @@ exports.updateItem = async (req, res) => {
     try {
         const updates = Object.keys(req.body)
         const item = await Item.findOne({ _id: req.params.id })
-        updates.forEach(update => req.user[update] = req.body[update])
+        updates.forEach(update => item[update] = req.body[update]) // you are changing the body of the pencil which are the name,price,description, and quantity and THEN updating the item variable so that it changes
         await item.save()
         res.json(item)
     } catch (error) {
