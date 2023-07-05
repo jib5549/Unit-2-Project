@@ -44,8 +44,8 @@ exports.createItem = async (req, res) => {
         foundCart.totalItems+=item.quantity // increment after each item added
         foundCart.totalPrice+=item.quantity*item.price
         foundCart.totalPrice=foundCart.totalPrice.toFixed(2)
-        foundCart.save()
         await item.save()
+        await foundCart.save()
         // await foundCart.populate('items') // converting the object ID
         res.json({ item, foundCart })
     } catch (error) { 
