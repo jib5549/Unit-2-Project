@@ -1,6 +1,6 @@
 <p></p>
 <h1 style="font-size: 36px">Hello 👋 and welcome to my second project in GA : Cartify - Shopping Cart API</h1>
-<div style="font-size: 25px">Prerequisites:</div>
+<div style="font-size: 25px; font-weight: bold">Prerequisites:</div>
 
 <ul>
   <li><a href="https://nodejs.org/en/">Node.js</a>: Ensure that you have Node.js installed on your machine. You can download it from the official Node.js website and follow the installation instructions for your operating system.</li>
