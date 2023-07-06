@@ -11,13 +11,19 @@
 <div style="font-size: 30px">Getting Started:</div>
 <hr>
    <ol>
-    <li>Before we start cloning, we have to decide where we want to clone the API to.</li>
-    <li>Then, you can simply clone the <a href="https://github.com/jib5549/Unit-2-Project">repository</a> by obtaining the SSH code : <code>git clone git@github.com:jib5549/Unit-2-Project.git</code> copy and paste this exact code.</li>
-    <li>After cloning, open the file in your VS code.</li>
-    <li>The first thing to install after cloning is <code>npm i</code> which will install all dependencies from a package.json file. </li>
-    <li>Now, create a new file by typing this in the vs code terminal : <code>touch .env</code> </li>
-    <li>In the '.env' file, make sure to change your mongodb uri in order to connect with your database correctly :</li>
-  </ol>
+    <li>Before we start cloning, we have to decide where we want to clone the API to. To help you better understand, I will create a new directory with 'mkdir clone' and that will generate a brand new directory. Then, cd (change directory) into it by 'cd clone' so we are in the correct location for cloning. Finally, we are ready to clone!</li>
+    <img src="https://i.imgur.com/fPoXqI3.png"> </br>
+    <img src="https://i.imgur.com/vwE0AOX.png">
+    <li>Then, you can simply clone the <a href="https://github.com/jib5549/Unit-2-Project">repository</a> by obtaining the SSH code. For time sake, I have provided the exact line so just copy and paste this on your terminal : <pre><code>git clone git@github.com:jib5549/Unit-2-Project.git</code></pre> </li>
+    <img src="https://i.imgur.com/iZ13nKl.png">
+    <li>To make sure and to check if the cloning process was successful, you can simply type this in your terminal to check and it should show you 'Unit-2-Project/' just like the image provided below:
+    <pre><code>ls</code></pre></li>
+    <img src="https://i.imgur.com/A0ndrzx.png">
+    <li>After cloning, open the file in your VS Code by typing this in your terminal and it will directly open your VS Code with the project :
+    <pre><code>code .</code></pre></li>
+    <li>Now, the first thing to install after cloning is <code>npm i</code> which will install all dependencies from a package.json file. </li>
+    <li>Create a new file by typing this in the vs code terminal : <code>touch .env</code> </li>
+    <li>In the '.env' file, make sure to change your mongodb uri in order to connect with your database correctly :
 <pre><code>MONGO_URI=mongodb://your-mongodb-uri</code></pre>
 
 <p>Replace <code>mongodb://your-mongodb-uri</code> with your actual MongoDB cluster and this can be found in your MongoDB account.</p>
@@ -26,7 +32,7 @@
 <hr>
 <p>To start the project, run the following command:</p>
 
-<pre><code>npm run dev</code></pre>
+<pre><code>npm start</code></pre>
 
 <p>The application should now be running on <code>http://localhost:3000</code>.</p>
 
