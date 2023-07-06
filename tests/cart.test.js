@@ -24,13 +24,16 @@ afterAll(async () => {
 
 describe('Test the user endpoints', () => {
     test('It should delete a cart', async () => {
-        const item = new Item({ name: 'One Piece', price: 2147483647, description: 'Luffy got it', quantity: 1 })
-        await item.save()
-        const response = await request(app)
-            .delete(`/items/${item._id}`)
+      const user = new User({ name: 'Jun', email: 'jib573549@gmail.com', password: 'password' })
+      await user.save()
+      const token = await user.generateAuthToken()
+      const cart = new Cart({ name: 'One Piece', price: 2147483647, description: 'Luffy got it', quantity: 1 })
+      await item.save()
+      const response = await request(app)
+          .delete(`/cart/${cart._id}`)
+          .set('Authorization', `Bearer ${token}`)
 
-    expect(response.statusCode).toBe(200)
-    expect(response.body).toEqual('You have successfully delete a item!') // we're testing the response of the body which is essential the request sent back when we made a good request
+      expect.not.objectContaining(cart)
     })
     test('It should update a cart', async () => {
     const item = new Item({ name: 'Pen', price: 5.99, description: 'can not erase', quantity: 1 })

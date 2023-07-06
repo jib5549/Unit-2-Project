@@ -4,9 +4,12 @@ const Cart = require('../models/cart')
 
 exports.deleteCart = async(req, res) => {
     try {
-        const cart = await Cart.findOneAndDelete({ _id: req.params.id })
-        res.sendStatus(204)
-    } catch (error) {
+        await Cart.findOneAndDelete({'_id': req.params.id})
+            .then(() => {
+                res.redirect('/cart')
+            })
+    }
+    catch (error) {
         res.status(400).json({ message: error.message })
     }
 }

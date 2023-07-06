@@ -4,8 +4,8 @@ const Cart = require('../models/cart')
 
 exports.itemIndex = async (req, res) => {
     try {
-        const foundItems = await Item.find({})
-        res.json({ items: foundItems })
+        const foundItems = await Item.find({});
+        res.json(foundItems)
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
@@ -13,11 +13,12 @@ exports.itemIndex = async (req, res) => {
 
 exports.deleteItem = async (req, res) => {
     try {
-        const item = await Item.findOne({ _id: req.params.id })
-        await item.deleteOne()
-        // splice the item so it also gets deleted from the cart
-        res.sendStatus(204)
-    } catch (error) {
+        await Item.findOneAndDelete({'_id': req.params.id})
+            .then(() => {
+                res.redirect('/items')
+            })
+    }
+    catch (error) {
         res.status(400).json({ message: error.message })
     }
 }
