@@ -52,6 +52,11 @@ Connected to MongoDB</code></pre>
     <li>After finishing the setup, open up the app and let the fun begin!</li>
     <li>Head over to the <code>Overview</code> tab and click on <code>+</code> to create a new workspace and you should get something similar to the image below.</li>
     <img src="https://i.imgur.com/DQqjSuI.png">
+    </br>
+</ol>
+<div style="font-style: italic; font-size: 30px">Creating a User :</div>
+<ol>
+<hr>
     <li>After doing so, we can now start creating a user but there is one small edit that we have to do to our Postman app before we can start.</li>
     <li>We first need to type in <code>localhost:3000/users</code> where it specifies <code>Enter URL or paste text</code> </li>
     <li>Change the request from <code>GET</code> to a <code>POST</code> , <code>Params</code> to <code>Body</code> , <code>none</code> to <code>raw</code> , and finally click on the blue <code>Text ↓ </code> which will give you a dropdown and click on <code>JSON</code>. Last thing before we make a user is creating our body. Copy the code below or if you want a different body feel free to change it up but all of these <strong>MUST</strong> have the same format! 
@@ -63,12 +68,22 @@ Connected to MongoDB</code></pre>
     If that was confusing, please look at the image below for clarity. </li>
     <img src="https://i.imgur.com/DQfuNDE.png">
     <li>Then press <code>Send</code> and watch the magic happen before your eyes! Congrats ✨you have created your first user!</li>
-    <img src="https://i.imgur.com/jL89kNv.png">
+    <img src="https://i.imgur.com/KjBNFO2.png">
     <li>Now you might be wondering why you are getting so much more information than you have originally put in. Let me clear up that part for you. The password we provided in the request body, <code>"password"</code> , has been securely hashed by the server before being stored in the database. It's for security purposes so in this case we want our response to be hashed instead of plaintext. Next, <code>"_id"</code> is the unique identifier for this specific user so it's essential. The <code>"loggedIn"</code> part is <code>false</code> because we haven't logged in yet but soon we will see that change to <code>true</code> once we login. Last but not least, the token is commonly used for authentication and authorization purposes in web applications. It allows the server to verify the identity of the user and provide access to protected resources or perform certain actions on behalf of the user without requiring the user to constantly login with every request.</li>
-    <li>With all that said, now let's log in! For this part, all we need to do is add the word <em>login</em> behind our original URL. Like this! <code>localhost:3000/users/login</code> . You should now be logged in and your response should look something like this. You can see how <code>"loggedIn"</code> is <code>true</code> now! </li>
-    <img src="https://i.imgur.com/ldMUaKe.png">
+    <li>With all that said, now let's log in! For this part, all we need to do is add the word <em>login</em> behind our original URL. Like this! <code>localhost:3000/users/login</code> and press <code>Send</code>. You should now be logged in and your response should look something like this. You can see how <code>"loggedIn"</code> is <code>true</code> now! People with keen eye sight probably have noticed the change but you get a new token after you log in and you have to use that one to authorize yourself. </li>
+    <img src="https://i.imgur.com/xRSN41W.png">
+    <li><em>Note: your token and mine are going to be different because this is also unique! <strong>Save the token after you log in because we will need it for the next step.</em></strong></li>
 </ol>
-
+<div style="font-style: italic; font-size: 30px">Creating a Cart :</div>
+<hr>
+<ol>
+<li>Now, we are going to create a cart but before doing so we have to make a few adjusts again. </li>
+<li>Next to the <code>Body</code> tab, there should be an <code>Authorization</code> tab. Click it and by default it should be <code>Inherit auth from par...</code> but we need to change that to <code>Bearer Token</code> and paste the copied token from earlier. Like so.</li>
+<img src="https://i.imgur.com/ZNcFO9m.png">
+<li>Just from that step, we are now considered an authorized user because we logged in and took that token that was generated and pasted it into the <code>Bearer Token</code> field.</li>
+<li>Now, all we need to do is change the URL to this <code>localhost:3000/cart</code> and press <code>Send</code>. You will now have created a user and a cart that is specifically associated with that user! In the image below, you can see that the <code>"user"</code> is the same as the <code>"_id"</code> because it's connected to each other and the <code>"_id"</code> in the cart is the unique identifier for this cart that's automatically generated from MongoDB.</li>
+<img src="https://i.imgur.com/ulFA6UC.png">
+</ol>
 <div style="font-style: italic; font-size: 30px">Diagram:</div>
 <hr>
 <p>This diagram shows the attributes of each model and the associations between the models. Each model has a primary key, you can locate it by looking for the key icon, which are specific to each of its own identity and with that you can connect with other models through a unique key. It's important to understand the relationships between the entities. In this scenario, we can see that each user can have multiple carts and a cart can have multiple items.</p>
