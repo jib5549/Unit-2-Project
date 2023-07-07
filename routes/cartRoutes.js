@@ -7,7 +7,7 @@ router.post('/', userController.auth, cartController.createCart)
 router.get('/', userController.auth, cartController.cartIndex)
 router.put('/:id', userController.auth, cartController.updateCart)
 router.delete('/:id', userController.auth, cartController.deleteCart)
-router.get('/', userController.auth, cartController.showCart)
+router.get('/:id', userController.auth, cartController.showCart)
 
 module.exports = router
 

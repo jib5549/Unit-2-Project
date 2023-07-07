@@ -14,15 +14,6 @@ exports.deleteCart = async(req, res) => {
     }
 }
 
-// exports.updateCart = async(req,res) => {
-//     try {
-//         const cart = await Cart[Item].findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }); // findOneAndUpdate automatically saves it
-//         res.json(cart)
-//     } catch (error) {
-//        res.status(400).json({ message: error.message }) 
-//     }
-// }
-
 exports.updateCart = async(req, res) => {
     try {
         const updates = Object.keys(req.body)
@@ -36,19 +27,6 @@ exports.updateCart = async(req, res) => {
         res.status(400).json({message: error.message})
     }
 }
-
-// exports.updateCart = async (req, res) => {
-//     try {
-//       const updates = Object.keys(req.body);
-//       const cart = await Cart.findOne({ _id: req.params.id });
-//       updates.forEach(update => {cart.set(update, req.body[update]);
-//       });
-//       await cart.save();
-//       res.json(cart);
-//     } catch (error) {
-//       res.status(400).json({ message: error.message });
-//     }
-//   };
 
 exports.createCart = async(req, res) => {
     try {
