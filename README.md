@@ -105,7 +105,6 @@ Connected to MongoDB</code></pre>
 <img src="https://i.imgur.com/lfVgrdU.png">
 <img src="https://i.imgur.com/hbXLo43.png">
 <li>Last but not least, you can also delete an item and the concept is the same for all. Copy and paste the specific <code>"_id"</code> behind the URL and change the request to <code>DELETE</code> and press <code>Send</code>.</li>
-<li></li>
 <img src="https://i.imgur.com/hbmGdRk.png.png">
 <li></li>After you click <code>Send</code> , you will see that it's gone and nothing gets returned that's because it's no longer in the database!
 <img src="https://i.imgur.com/m1bvCMk.png.png">
