@@ -1,5 +1,5 @@
 <h1 style="font-size: 36px">Hello 👋 and welcome to my second project in GA : Cartify - Shopping Cart API</h1>
-<div style="font-style: italic; font-size: 30px">Prerequisites:</div>
+<h2 style="font-style: italic; font-size: 30px">Prerequisites:</h2>
 <hr>
 <ul>
   <li><a href="https://nodejs.org/en/">Node.js</a> : Ensure that you have Node.js installed on your machine. You can download it from the official Node.js website and follow the installation instructions for your operating system.</li>
@@ -8,7 +8,7 @@
 
 <pre><code>npm install -g nodemon</code></pre>
 
-<div style="font-style: italic; font-size: 30px">Getting Started:</div>
+<h2 style="font-style: italic; font-size: 30px">Getting Started:</h2>
 <hr>
    <ol>
     <li>Before we start cloning, we have to decide where we want to clone the API to. To help you better understand, I will create a new directory with 'mkdir clone' and that will generate a brand new directory. </br>
@@ -32,7 +32,7 @@
 
 <p>Replace <code>mongodb://your-mongodb-uri</code> with your actual MongoDB cluster and this can be found in your MongoDB account.</p>
 
-<div style="font-style: italic; font-size: 30px">Starting the app :</div>
+<h2 style="font-style: italic; font-size: 30px">Starting the app :</h2>
 <hr>
 <p>To start the project, run the following command and I will be providing images for clarity :</p>
 
@@ -54,7 +54,7 @@ Connected to MongoDB</code></pre>
     <img src="https://i.imgur.com/DQqjSuI.png">
     </br>
 </ol>
-<div style="font-style: italic; font-size: 30px">Creating a User :</div>
+<h2 style="font-style: italic; font-size: 30px">Creating a User :</h2>
 <ol>
 <hr>
     <li>After doing so, we can now start creating a user but there is one small edit that we have to do to our Postman app before we can start.</li>
@@ -74,7 +74,7 @@ Connected to MongoDB</code></pre>
     <img src="https://i.imgur.com/xRSN41W.png">
     <li><em>Note: your token and mine are going to be different because this is also unique! <strong>Save the token after you log in because we will need it for the next step.</em></strong></li>
 </ol>
-<div style="font-style: italic; font-size: 30px">Creating a Cart :</div>
+<h2 style="font-style: italic; font-size: 30px">Creating a Cart :</h2>
 <hr>
 <ol>
 <li>Now, we are going to create a cart but before doing so we have to make a few adjusts again. </li>
@@ -84,7 +84,7 @@ Connected to MongoDB</code></pre>
 <li>Now, all we need to do is change the URL to this <code>localhost:3000/cart</code> and press <code>Send</code>. You will now have created a user and a cart that is specifically associated with that user! In the image below, you can see that the <code>"user"</code> is the same as the <code>"_id"</code> because it's connected to each other and the <code>"_id"</code> in the cart is the unique identifier for this cart that's automatically generated from MongoDB.</li>
 <img src="https://i.imgur.com/ulFA6UC.png">
 </ol>
-<div style="font-style: italic; font-size: 30px">Diagram:</div>
+<h2 style="font-style: italic; font-size: 30px">Diagram:</h2>
 <hr>
 <p>This diagram shows the attributes of each model and the associations between the models. Each model has a primary key, you can locate it by looking for the key icon, which are specific to each of its own identity and with that you can connect with other models through a unique key. It's important to understand the relationships between the entities. In this scenario, we can see that each user can have multiple carts and a cart can have multiple items.</p>
 
@@ -92,24 +92,24 @@ Connected to MongoDB</code></pre>
 </br>
   <img src="https://i.imgur.com/irj13H6.png">
 
-<div style="font-style: italic; font-size: 30px">Wireframes:</div>
+<h2 style="font-style: italic; font-size: 30px">Wireframes:</h2>
 <hr>
 <p>Below are wireframes for the project. I drew out how I would want my website to look like. I have made comments on each image so feel free to read over them to get a better grasp on what I'm picturing.</p>
 <p>Here is a <a href="https://trello.com/b/aPW5qGWn/unit-2-project">link</a> to my Trello for my API.</p>
 
 
 </br>
-<h3 style="font-style: italic; font-size: 30px">Home page</h3>
+<h2 style="font-style: italic; font-size: 30px">Home page</h2>
 <hr>
   <img src="https://i.imgur.com/0T279KR.png">
 </br>
 </br>
-  <h3 style="font-style: italic; font-size: 30px">Cart page</h3>
+  <h2 style="font-style: italic; font-size: 30px">Cart page</h2>
   <hr>
   <img src="https://i.imgur.com/p6E2eoy.png">
 </br>
 </br>
-  <h3 style="font-style: italic; font-size: 30px">Item page</h3>
+  <h2 style="font-style: italic; font-size: 30px">Item page</h2>
   <hr>
   <img src="https://i.imgur.com/jlEn5Tn.png">
 
