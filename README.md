@@ -106,12 +106,11 @@ Connected to MongoDB</code></pre>
 <img src="https://i.imgur.com/hbXLo43.png">
 <li>Last but not least, you can also delete an item and the concept is the same for all. Copy and paste the specific <code>"_id"</code> behind the URL and change the request to <code>DELETE</code> and press <code>Send</code>.</li>
 <img src="https://i.imgur.com/hbmGdRk.png.png">
-<li></li>After you click <code>Send</code> , you will see that it's gone and nothing gets returned that's because it's no longer in the database!
+<li>After you click <code>Send</code> , you will see that it's gone and nothing gets returned that's because it's no longer in the database!
 <img src="https://i.imgur.com/m1bvCMk.png.png">
 <li>Now to double check if it's really gone or not, just do a simple <code>GET</code> request with your plain <code>localhost:3000/items</code> and you will see that there are no items.</li>
 <img src="https://i.imgur.com/1AdW7qa.png.png">
 </ol>
-
 <h2 style="font-style: italic; font-size: 30px">Diagram:</h2>
 <p>This diagram shows the attributes of each model and the associations between the models. Each model has a primary key, you can locate it by looking for the key icon, which are specific to each of its own identity and with that you can connect with other models through a unique key. It's important to understand the relationships between the entities. In this scenario, we can see that each user can have multiple carts and a cart can have multiple items.</p>
 
