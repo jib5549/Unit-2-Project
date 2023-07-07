@@ -1,4 +1,4 @@
-<h1 style="font-size: 36px">Hello 👋 and welcome to my second project in GA : Cartify - Shopping Cart API</h1>
+<h1 style="font-size: 45px">Hello 👋 and welcome to my second project in GA : Cartify - Shopping Cart API</h1>
 <h2 style="font-style: italic; font-size: 30px">Prerequisites:</h2>
 <hr>
 <ul>
@@ -18,10 +18,11 @@
     To check if you are in the right location type 'pwd' and it will tell you where you currently are. Since we are in the location where we want to be we are ready to clone!</li>
     <img src="https://i.imgur.com/sru6zJb.png"> </br>
     <li>You can simply clone the repository by obtaining the SSH code. If you click on the provided <a href="https://github.com/jib5549/Unit-2-Project">link</a> it will directly lead you to my Github website where my repository is but for your convenience I have provided SSH code below. You can find the SSH code by clicking on the green button. <img src="https://i.imgur.com/tbsIS3Y.png"></br>
+   </br>
     <img src="https://i.imgur.com/txX7k7G.png"> </br>
     For time sake, I have provided the exact line so just copy and paste this on your terminal like so : <pre><code>git clone git@github.com:jib5549/Unit-2-Project.git</code></pre> </li>
     <img src="https://i.imgur.com/iZ13nKl.png">
-    <li>To make sure and to check if the cloning process was successful, you can simply type this in your terminal to check and it should show you 'Unit-2-Project/' just like the image provided below:
+    <li>To make sure and to check if the cloning process was successful, you can simply type this in your terminal to check and it should show you 'Unit-2-Project/' just like the image provided below:</br>
     <img src="https://i.imgur.com/A0ndrzx.png">
     <li>After cloning, open the file in your VS Code by typing this in your terminal and it will directly open your VS Code with the project : </br>
     <img src="https://i.imgur.com/VifnVv3.png">
@@ -44,7 +45,7 @@
 Connected to MongoDB</code></pre>
 <p><code>Ayo the port at 3000 is lit!</code> is signaling that the application is listening on PORT 3000.</p>
 <p><code>Connected to MongoDB</code> is signaling that it successfully connected to the MongoDB database.</p>
-<div style="font-style: italic; font-size: 30px">API with Postman :</div>
+<h2 style="font-style: italic; font-size: 30px">API with Postman :</h2>
 <hr>
 <ol>
     <li>Postman is an API Platform for developers to design, build, test, and iterate their APIs.</li>
