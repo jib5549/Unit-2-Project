@@ -1,4 +1,6 @@
 <h1 style="font-size: 45px">Hello 👋 and welcome to my second project in GA : Cartify - Shopping Cart API</h1>
+<h2 style="font-style: italic; font-size: 30px">Description:</h2>
+Cartify is a simple API where it allows the user to create an account, personal cart, and any item they want to store in their cart. I've added a feature where the user has to be logged in in order to do certain actions for security reasons. This is a lengthy readme so please bare with me.
 <h2 style="font-style: italic; font-size: 30px">Prerequisites:</h2>
 
 <ul>
@@ -11,6 +13,7 @@
 <h2 style="font-style: italic; font-size: 30px">Getting Started:</h2>
 
    <ol>
+    <li>We are going to start by opening our Git Bash or Terminal depending on what system you have. I personally have a Windows so I will open Bash but the commands should work relatively the same.</li>
     <li>Before we start cloning, we have to decide where we want to clone the API to. To help you better understand, I will create a new directory with 'mkdir clone' and that will generate a brand new directory. </br>
     <img src="https://i.imgur.com/fPoXqI3.png"> </br>
     Then, cd (change directory) into it by 'cd clone' so we are in the correct location for cloning.
@@ -121,8 +124,6 @@ Connected to MongoDB</code></pre>
 <h2 style="font-style: italic; font-size: 30px">Wireframes:</h2>
 <p>Below are wireframes for the project. I drew out how I would want my website to look like. I have made comments on each image so feel free to read over them to get a better grasp on what I'm picturing.</p>
 <p>Here is a <a href="https://trello.com/b/aPW5qGWn/unit-2-project">link</a> to my Trello for my API.</p>
-
-
 </br>
 <h2 style="font-style: italic; font-size: 30px">Home page</h2>
 
@@ -139,3 +140,7 @@ Connected to MongoDB</code></pre>
   <img src="https://i.imgur.com/jlEn5Tn.png">
 
 
+<h2 style="font-style: italic; font-size: 30px">Routes</h2>
+<img src="https://i.imgur.com/DqMY1tH.png">
+<img src="https://i.imgur.com/QvSgcjZ.png">
+<img src="https://i.imgur.com/eqDc4qj.png">
